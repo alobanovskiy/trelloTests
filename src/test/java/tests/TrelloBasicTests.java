@@ -8,6 +8,9 @@ import pages.LoginPage;
 import org.testng.annotations.*;
 import pages.MainAppPage;
 
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
+
 import static org.testng.Assert.*;
 
 public class TrelloBasicTests extends LoginPage {
@@ -22,6 +25,7 @@ public class TrelloBasicTests extends LoginPage {
     public void setUp(String email, String password){
         driver.get("https://trello.com/");
         loginPage.login(email, password);
+
     };
 
     @Test
@@ -78,6 +82,10 @@ public class TrelloBasicTests extends LoginPage {
                 .until(ExpectedConditions.presenceOfElementLocated(By.cssSelector(".boards-page-board-section-list-item")));
         driver.get(boardToDelete);
         mainAppPage.deleteBoard(boardToDelete);
+    }
+    @AfterMethod
+    public void close(){
+        driver.quit();
     }
 
 }

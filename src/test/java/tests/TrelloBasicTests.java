@@ -32,8 +32,8 @@ public class TrelloBasicTests extends LoginPage {
 
     @Test
     void logoutTest(){
-        String expContent = "Спасибо, что используете Trello.\n" +
-                "Вы вышли. Ну, что теперь?";
+        String expContent = "Thanks for using Trello.\n" +
+                "You’re all logged out. So now what?";
         MainAppPage mainAppPage = new MainAppPage();
         mainAppPage.logOut();
         String content = driver.findElement(By.cssSelector(".layout-centered.u-center-text")).getText();
@@ -57,11 +57,20 @@ public class TrelloBasicTests extends LoginPage {
 
     }
 
+
     @Test
-    void checkAccess() {
-        Boolean privateBoard = boardPage.isPrivate("https://trello.com/b/Fiz4oeMa/test-board");
+    void makePrivate(){
+        boardPage.makePrivate("https://trello.com/b/HfzscSW8/beautiful-board");
+        Boolean privateBoard = boardPage.isPrivate("https://trello.com/b/HfzscSW8/beautiful-board");
         assertTrue(privateBoard);
-    };
+    }
+
+    @Test
+    void makePublic(){
+        boardPage.makePublic("https://trello.com/b/HfzscSW8/beautiful-board");
+        Boolean privateBoard = boardPage.isPublic("https://trello.com/b/HfzscSW8/beautiful-board");
+        assertTrue(privateBoard);
+    }
 
     @Test(dependsOnMethods = { "createBoard" })
     void deleteBoard()throws InterruptedException{

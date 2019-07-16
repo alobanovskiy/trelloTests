@@ -10,14 +10,14 @@ import org.testng.Assert;
 
 public class MainAppPage extends PagesClass {
     
-    private By profileButton = By.cssSelector(".member-initials");
+    private By profileButton = By.cssSelector(".js-open-header-member-menu");
     private By settingsMenuButton = By.cssSelector("a.js-profile");
-    private By logoutMenuButton = By.cssSelector("a.js-logout");
+    private By logoutMenuButton = By.cssSelector("li:nth-child(7) > button");
     private By createBoard = By.cssSelector(".board-tile.mod-add");
     private By boardTitle = By.cssSelector(".subtle-input");
     private By createBoardButton = By.cssSelector(".primary");
     private By moreButton = By.cssSelector(".board-menu-navigation-item-link.js-open-more");
-    private By closeBoardButton = By.cssSelector(".board-menu-navigation-item-link.js-close-board");
+    private By closeBoardButton = By.cssSelector(".js-close-board");
     private By confirmClose = By.cssSelector(".js-confirm.full.negate");
     private By fullClose = By.cssSelector(".quiet.js-delete");
     private By favorite = By.cssSelector(".board-tile-options");

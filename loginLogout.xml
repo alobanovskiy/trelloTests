@@ -1,0 +1,14 @@
+<suite name="SuiteForTrello" parallel="false">
+    <parameter name="email" value="lobanovsky.a.o@gmail.com" />
+    <parameter name="password" value="Test1234" />
+    <test name="login+logout">
+        <classes>
+            <class name="tests.TrelloBasicTests">
+                <methods>
+                    <include name = "loginTest"> </include>
+                    <include name = "logoutTest"> </include>
+                </methods>
+            </class>
+        </classes>
+    </test>
+</suite>

@@ -25,7 +25,8 @@
             <class name="tests.TrelloBasicTests">
                 <methods>
                     <include name = "createBoard"> </include>
-                    <include name = "checkAccess"> </include>
+                    <include name = "makePrivate"> </include>
+                    <include name = "makePublic"> </include>
                     <include name = "deleteBoard"> </include>
                 </methods>
             </class>
